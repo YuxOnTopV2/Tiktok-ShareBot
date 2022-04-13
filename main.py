@@ -7,28 +7,9 @@ from http import cookiejar
 from Data.UserAgent import UserAgent
 from Data.Lists import DeviceTypes, Platforms, Channel, ApiDomain
 from Data.Auth import api
-import hashlib
 
 System.Title("[ShareBot] Fortua - .gg/nyFPvNxNBh")
 
-def getchecksum():
-    path = os.path.basename(__file__)
-    if not os.path.exists(path):
-        path = path[:-2] + "exe"
-    md5_hash = hashlib.md5()
-    a_file = open(path,"rb")
-    content = a_file.read()
-    md5_hash.update(content)
-    digest = md5_hash.hexdigest()
-    return digest
-
-keyauthapp = api(
-    name = "Visper",
-    ownerid = "vARAmHp7pv",
-    secret = "f02490293a4717bc533871bc0f14f8b1af5fd0e5fcfbf09d22c788071cbecdbc",
-    version = "1.0",
-    hash_to_check = getchecksum()
-)
 
 fortua = """
 
@@ -43,7 +24,8 @@ fortua = """
   ███         ▀██████▀    ███    ███    ▄████▀   ████████▀    ███    █▀  
                           ███    ███                                     
 
-                     By ! Fortua#1640 and yux#0002                           
+                     By ! Fortua#1640 and yux#0002   
+                    
                                               
 """
 
@@ -129,17 +111,12 @@ def ClearURI(link):
 if (__name__ == "__main__"):
     Clear()
     print(Colorate.Diagonal(Colors.blue_to_white, Center.XCenter(fortua)))
-    key = Write.Input("    License Key > ", Colors.blue_to_white, interval=0.0001)
-    keyr = keyauthapp.license(key)
-    if keyr != "accepted":
-        Write.Input("    Incorrect Key !", Colors.blue_to_red, interval=0.0001)
-        exit()
     itemID = Write.Input("    Video Link > ", Colors.blue_to_white, interval=0.0001)
     amount = Write.Input("    Amount (0=inf) > ", Colors.blue_to_white, interval=0.0001)
     NThread = Write.Input("    Thread Amount > ", Colors.blue_to_white, interval=0.0001)
     
     if Title("Proy Scrapper") == False:
-        Debug = Write.Input("Debug Fails [y/n] ? > ", Colors.blue_to_white, interval=0.0001)
+        Debug = Write.Input("   Debug Fails [y/n] ? > ", Colors.blue_to_white, interval=0.0001)
         if Debug.lower().startswith("y"):
             DebugMode = False
         else:
