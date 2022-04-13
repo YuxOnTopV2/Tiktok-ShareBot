@@ -116,7 +116,7 @@ if (__name__ == "__main__"):
     NThread = Write.Input("    Thread Amount > ", Colors.blue_to_white, interval=0.0001)
     
     if Title("Proy Scrapper") == False:
-        Debug = Write.Input("   Debug Fails [y/n] ? > ", Colors.blue_to_white, interval=0.0001)
+        Debug = Write.Input("    Debug Fails [y/n] ? > ", Colors.blue_to_white, interval=0.0001)
         if Debug.lower().startswith("y"):
             DebugMode = False
         else:
