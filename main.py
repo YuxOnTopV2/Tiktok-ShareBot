@@ -1,4 +1,5 @@
 import ssl, os, requests, time
+import ascii2text
 from threading import active_count, Thread
 from pystyle import Anime, Colorate, Colors, Center , System, Write
 from random import randint, choice
